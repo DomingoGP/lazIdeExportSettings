@@ -1,0 +1,123 @@
+object dlgImport: TdlgImport
+  Left = 334
+  Height = 545
+  Top = 229
+  Width = 948
+  Caption = 'Import  lazarus settings'
+  ClientHeight = 545
+  ClientWidth = 948
+  LCLVersion = '3.99.0.0'
+  OnCreate = FormCreate
+  object feZipFileName: TFileNameEdit
+    Left = 8
+    Height = 23
+    Top = 12
+    Width = 427
+    OnAcceptFileName = feZipFileNameAcceptFileName
+    Filter = 'Zip files|*.zip'
+    FilterIndex = 0
+    HideDirectories = False
+    ButtonWidth = 23
+    NumGlyphs = 1
+    MaxLength = 0
+    TabOrder = 0
+  end
+  object btnOpen: TButton
+    Left = 456
+    Height = 25
+    Top = 10
+    Width = 75
+    Caption = 'Open file'
+    TabOrder = 1
+    OnClick = btnOpenClick
+  end
+  object Panel1: TPanel
+    Left = 8
+    Height = 488
+    Top = 48
+    Width = 928
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    ClientHeight = 488
+    ClientWidth = 928
+    TabOrder = 2
+    Visible = False
+    object tvImport: TLazVirtualStringTree
+      Left = 8
+      Height = 296
+      Top = 26
+      Width = 432
+      DefaultText = 'Node'
+      Header.AutoSizeIndex = -1
+      Header.Columns = <>
+      Header.MainColumn = -1
+      Header.Options = [hoColumnResize, hoDrag, hoShowImages, hoShowSortGlyphs]
+      TabOrder = 0
+      TreeOptions.AutoOptions = [toAutoDropExpand, toAutoExpand, toAutoScrollOnExpand, toAutoSort, toAutoTristateTracking, toAutoDeleteMovedNodes, toAutoChangeScale]
+      TreeOptions.MiscOptions = [toAcceptOLEDrop, toCheckSupport, toFullRepaintOnResize, toInitOnSave, toToggleOnDblClick, toWheelPanning]
+      OnGetText = tvImportGetText
+    end
+    object Memo1: TMemo
+      Left = 448
+      Height = 465
+      Top = 8
+      Width = 464
+      Anchors = [akTop, akLeft, akRight, akBottom]
+      ReadOnly = True
+      ScrollBars = ssBoth
+      TabOrder = 1
+      WordWrap = False
+    end
+    object lbConfigDir: TLabel
+      Left = 16
+      Height = 15
+      Top = 328
+      Width = 93
+      Caption = 'Lazarus config dir'
+    end
+    object deLazarusConfigDir: TDirectoryEdit
+      Left = 16
+      Height = 23
+      Top = 352
+      Width = 432
+      ShowHidden = False
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 2
+    end
+    object btnImport: TButton
+      Left = 320
+      Height = 25
+      Top = 448
+      Width = 120
+      Caption = 'Import settings ...'
+      TabOrder = 3
+      OnClick = btnImportClick
+    end
+    object blImport: TLabel
+      Left = 8
+      Height = 15
+      Top = 8
+      Width = 82
+      Caption = 'Import options:'
+    end
+    object lbImportWarning: TStaticText
+      Left = 16
+      Height = 86
+      Top = 387
+      Width = 270
+      Caption = 'WARNING: '#13#10'Importing  may broke your IDE installation.'#13#10'Please make a backup of the'#13#10'Lazarus config dir before.'#13#10'You MUST CLOSE the IDE after importing.'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 4
+    end
+  end
+  object SaveDialog: TSaveDialog
+    DefaultExt = '.zip'
+    FileName = 'lazarussettings'
+    Filter = 'zip files|*.zip'
+    Left = 288
+    Top = 264
+  end
+end

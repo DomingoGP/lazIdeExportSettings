@@ -1,0 +1,36 @@
+object Form1: TForm1
+  Left = 659
+  Height = 225
+  Top = 324
+  Width = 355
+  Caption = 'Export / Import some Lazarus settings.'
+  ClientHeight = 225
+  ClientWidth = 355
+  LCLVersion = '3.99.0.0'
+  object btnExport: TButton
+    Left = 55
+    Height = 25
+    Top = 188
+    Width = 75
+    Caption = 'Export ...'
+    TabOrder = 0
+    OnClick = btnExportClick
+  end
+  object btnimport: TButton
+    Left = 224
+    Height = 25
+    Top = 188
+    Width = 75
+    Caption = 'Import ...'
+    TabOrder = 1
+    OnClick = btnimportClick
+  end
+  object StaticText1: TStaticText
+    Left = 24
+    Height = 160
+    Top = 16
+    Width = 304
+    Caption = 'WARNING: '#13#10'Importing options may broke your Lazarus so please make a copy of your configuration directory before importing.'#13#10#13#10'You must close the Lazarus-IDE before exporting/importing configuration.'#13#10#13#10'To find ide actual config directory'#13#10'Menu -> View-> Ide internals -> About IDE'
+    TabOrder = 2
+  end
+end

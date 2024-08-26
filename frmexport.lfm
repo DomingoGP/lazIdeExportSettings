@@ -1,0 +1,98 @@
+object dlgExport: TdlgExport
+  Left = 268
+  Height = 578
+  Top = 234
+  Width = 454
+  Caption = 'Export lazarus settings'
+  ClientHeight = 578
+  ClientWidth = 454
+  LCLVersion = '3.99.0.0'
+  OnCreate = FormCreate
+  object tvExport: TLazVirtualStringTree
+    Left = 8
+    Height = 384
+    Top = 32
+    Width = 432
+    DefaultText = 'Node'
+    Header.AutoSizeIndex = -1
+    Header.Columns = <>
+    Header.MainColumn = -1
+    Header.Options = [hoColumnResize, hoDrag, hoShowImages, hoShowSortGlyphs]
+    TabOrder = 0
+    TreeOptions.AutoOptions = [toAutoDropExpand, toAutoExpand, toAutoScrollOnExpand, toAutoSort, toAutoTristateTracking, toAutoDeleteMovedNodes, toAutoChangeScale]
+    TreeOptions.MiscOptions = [toAcceptOLEDrop, toCheckSupport, toFullRepaintOnResize, toInitOnSave, toToggleOnDblClick, toWheelPanning]
+    OnGetText = tvExportGetText
+  end
+  object btnExport: TButton
+    Left = 320
+    Height = 25
+    Top = 528
+    Width = 120
+    Caption = 'Export settings ...'
+    TabOrder = 1
+    OnClick = btnExportClick
+  end
+  object lbDescription: TLabel
+    Left = 7
+    Height = 15
+    Top = 474
+    Width = 60
+    Caption = 'Description'
+  end
+  object edDescription: TEdit
+    Left = 7
+    Height = 23
+    Top = 500
+    Width = 433
+    TabOrder = 2
+    Text = 'Backup of some Lazarus settings.'
+  end
+  object deLazarusConfigDir: TDirectoryEdit
+    Left = 8
+    Height = 23
+    Top = 448
+    Width = 432
+    ShowHidden = False
+    ButtonWidth = 23
+    NumGlyphs = 1
+    MaxLength = 0
+    TabOrder = 3
+  end
+  object lbConfigDir: TLabel
+    Left = 8
+    Height = 15
+    Top = 424
+    Width = 93
+    Caption = 'Lazarus config dir'
+  end
+  object lbLazarusVersion: TLabel
+    Left = 8
+    Height = 15
+    Top = 532
+    Width = 80
+    Caption = 'Lazarus version'
+  end
+  object edLazarusVersion: TEdit
+    Left = 104
+    Height = 23
+    Top = 528
+    Width = 80
+    MaxLength = 10
+    ReadOnly = True
+    TabOrder = 4
+  end
+  object lbExport: TLabel
+    Left = 8
+    Height = 15
+    Top = 8
+    Width = 79
+    Caption = 'Export options:'
+  end
+  object SaveDialog: TSaveDialog
+    DefaultExt = '.zip'
+    FileName = 'lazarussettings'
+    Filter = 'zip files|*.zip'
+    Left = 216
+    Top = 296
+  end
+end
